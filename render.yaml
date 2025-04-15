@@ -6,7 +6,7 @@ services:
     buildCommand: |
       pip install numpy && \
       pip install -r requirements.txt && \
-      pip install ta-lib || pip install git+https://github.com/mrjbq7/ta-lib.git@master
+      pip install --no-binary :all: git+https://github.com/mrjbq7/ta-lib.git@master
     startCommand: gunicorn dashboard.app_with_auth:server
     plan: free
     envVars:
